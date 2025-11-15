@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <link rel="icon" href="static/favicon.png" type="image/png" />
-   <title>CDT</title>
+  <title>CDT</title>
 
   <style>
     html, body {
@@ -12,7 +12,7 @@
       padding: 0;
       width: 100%;
       height: 100%;
-      background: rgb(255, 255, 255);
+      background: #ffffff;
       font-family: sans-serif;
       overscroll-behavior: contain;
       -webkit-user-select: none;
@@ -28,74 +28,64 @@
       background: #fff;
     }
 
+    /* 🔵 NOVO TOPBAR IGUAL AO PRINT */
     .top-bar {
+      background: #00245c;
+      color: white;
+      padding: 18px 25px 22px 25px;
       display: flex;
+      align-items: flex-start;
       justify-content: space-between;
-      align-items: center;
-      padding: 20px 16px;
-      background: #001F5C;
-      border-bottom: 1.3px solid rgba(0, 0, 0, 0.1);
-
-      flex-shrink: 0;
-      margin-bottom: 40px;
-
-      
-      
+      border-bottom-left-radius: 34px;
+      border-bottom-right-radius: 34px;
+      box-sizing: border-box;
     }
 
-    .top-left {
+    .left {
       display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 13px;
-      color: #333;
+      align-items: flex-start;
+      gap: 12px;
     }
 
-
-.Atualizadacentralizada {
-  display: flex;
-  justify-content: center;     /* centraliza horizontalmente */
-  align-items: center;         /* alinha verticalmente */
-  gap: 8px;                    /* espaço entre o ponto e o texto */
-  font-size: 14px;
-  color: #333;
-  margin-top: 0px;            /* distância do topo */
-  text-align: center;
-}
-.dot {
-  width: 10px;
-  height: 10px;
-  background: #27ae60;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-
-    .close {
-      color: #ffffff;
-      font-size: 20px;
+    .back-icon {
+      font-size: 24px;
+      color: white;
+      text-decoration: none;
       font-weight: bold;
+      margin-top: 2px;
+    }
+
+    .title {
+      font-size: 18px;
+      
+    }
+
+    .sub {
+      font-size: 12px;
+      opacity: 0.85;
+      margin-top: 2px;
+      display: block;
+    }
+
+    .menu-pontos {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      margin-top: 4px;
       cursor: pointer;
     }
 
-    .menu {
-      width: 20px;
-      height: 14px;
-      border-top: 2px solid #333;
-      border-bottom: 2px solid #333;
-      position: relative;
+    .menu-pontos .ponto {
+      width: 5px;
+      height: 5px;
+      background: white;
+      border-radius: 50%;
     }
 
-    .menu::after {
-      content: "";
-      position: absolute;
-      top: 5px;
-      left: 0;
-      width: 20px;
-      border-top: 2px solid #333;
-    }
+    /* ------------------------------ */
 
-    /* Área central */
     .rg-area {
       flex-grow: 1;
       min-height: 720px;
@@ -105,8 +95,6 @@
       justify-content: center;
       overflow: hidden;
       position: relative;
-      border-bottom: none;
-
     }
 
     .rg-wrapper {
@@ -114,9 +102,6 @@
       align-items: center;
       justify-content: center;
       margin-top: -100px;
-      border-bottom: none;
-
-      
     }
 
     .rg-img {
@@ -130,27 +115,21 @@
       will-change: transform;
       backface-visibility: hidden;
       transition: transform 0.3s ease;
-      padding-bottom: 15;
-      border-bottom: none;
-
-      
     }
 
-.footer {
-  position: fixed;
-  bottom: 30px; /* sobe o menu 80px acima do fundo */
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 12px;
-  background: #fff;
-  border-top: 1px solid #ddd;
-  z-index: 10;
-  flex-shrink: 0;
-}
-
+    .footer {
+      position: fixed;
+      bottom: 30px;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 12px;
+      background: #fff;
+      border-top: 1px solid #ddd;
+      z-index: 10;
+    }
 
     .footer img {
       width: 28px;
@@ -162,205 +141,149 @@
     .footer img.active {
       opacity: 1;
     }
+
     #loader {
-  position: fixed;
-  top: 16px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #e6f6ff;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 14px;
-  color: #333;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  z-index: 999;
-}
-.menu-pontos {
+      position: fixed;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #e6f6ff;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      color: #333;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      z-index: 999;
+    }
+    .back-btn {
+  width: 38px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.20);
+  border-radius: 50%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 4px;
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-  user-select: none;
+  text-decoration: none;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 
-.ponto {
-  width: 4px;
-  height: 4px;
-  background-color: #333;
-  border-radius: 50%;
+.arrow-left {
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  margin-left: -2px; /* Corrige alinhamento igual ao app */
 }
-
-
 
   </style>
 </head>
+
 <body>
-  <div id="loader" style="display:none;">
-  🔄 Atualizando...
-</div>
 
-  <div class="container">
-    <div class="top-bar">
-     <a href="index.html" class="close">Fechar</a>
+<div id="loader" style="display:none;">🔄 Atualizando...</div>
 
-
-
-      <div class="menu-pontos" title="Mais opções">
-  <span class="ponto"></span>
-  <span class="ponto"></span>
-  <span class="ponto"></span>
-</div>
+<!-- 🔵 TOP BAR NOVO -->
+<div class="top-bar">
+  <div class="left">
+    <a href="index.html" class="back-btn">
+    <span class="arrow-left">‹</span>
+</a>
 
 
+    <div>
+      <span class="title">HABILITAÇÃO</span><br>
+      <span class="sub" id="dataAtualizacao">Atualizado em 15/11/2025 - 10:04:04</span>
     </div>
-<div class="Atualizadacentralizada">
-  <div class="dot"></div>
-  <span id="dataAtualizacao">Atualizada em, DD/MM/AAAA às HH:MM</span>
-</div>
-
-    <div class="rg-area" id="rgArea">
-      <div class="rg-wrapper">
-        <img
-          class="rg-img"
-          id="rgImg"
-          src="static/base_RGAPP1.png"
-          alt="RG Digital"
-        />
-      </div>
-    </div>
-
-<div class="footer">
-  <img id="btnRG1" src="static/usuario.png" class="active" alt="RG 1" />
-  <img id="btnRG2" src="static/id-card_88591.png" class="active" alt="RG 2" />
-  <img id="btnRG3" src="static/google-docs.png" class="active" alt="RG 3" />
-   <img id="btnRG4" src="static/qr-code.png" class="active" alt="RG 4" />
-</div>
-
   </div>
 
-  <script>
-    const imagens = [
-      "/static/base_RGAPP1.png",
-      "/static/base_RGAPP2.png",
-      "/static/base_RGAPP3.png",
-      "/static/base_RGAPP4.png"
-    ];
-    let indexAtual = 0;
-    let rotacaoAtual = 90;
-    const rgImg = document.getElementById('rgImg');
-    const rgArea = document.getElementById('rgArea');
+  <div class="menu-pontos">
+    <span class="ponto"></span>
+    <span class="ponto"></span>
+    <span class="ponto"></span>
+  </div>
+</div>
 
-    function aplicarRotacao() {
-      rgImg.style.transform = `rotate(${rotacaoAtual}deg)`;
+<!-- ÁREA DO RG -->
+<div class="rg-area" id="rgArea">
+  <div class="rg-wrapper">
+    <img class="rg-img" id="rgImg" src="static/base_RGAPP1.png" alt="RG Digital" />
+  </div>
+</div>
+
+<!-- MENU INFERIOR -->
+<div class="footer">
+  <img id="btnRG1" src="static/usuario.png" class="active" alt="RG 1" />
+  <img id="btnRG2" src="static/id-card_88591.png" alt="RG 2" />
+  <img id="btnRG3" src="static/google-docs.png" alt="RG 3" />
+  <img id="btnRG4" src="static/qr-code.png" alt="RG 4" />
+</div>
+
+<script>
+  /* ——— LÓGICA DE IMAGENS ROTATIVAS ——— */
+  const imagens = [
+    "/static/base_RGAPP1.png",
+    "/static/base_RGAPP2.png",
+    "/static/base_RGAPP3.png",
+    "/static/base_RGAPP4.png"
+  ];
+
+  let indexAtual = 0;
+  let rotacaoAtual = 90;
+
+  const rgImg = document.getElementById('rgImg');
+  const rgArea = document.getElementById('rgArea');
+
+  function aplicarRotacao() {
+    rgImg.style.transform = `rotate(${rotacaoAtual}deg)`;
+  }
+
+  function trocarImagem(novoIndex) {
+    indexAtual = novoIndex;
+    rgImg.src = imagens[indexAtual];
+    rotacaoAtual = 90;
+    aplicarRotacao();
+  }
+
+  rgImg.onload = aplicarRotacao;
+
+  /* ——— Swipe para trocar páginas ——— */
+  let startX = 0;
+  rgArea.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+  }, { passive: true });
+
+  rgArea.addEventListener('touchend', e => {
+    const endX = e.changedTouches[0].clientX;
+    const deltaX = endX - startX;
+
+    if (Math.abs(deltaX) > 50) {
+      if (deltaX < 0) indexAtual = (indexAtual + 1) % imagens.length;
+      else indexAtual = (indexAtual - 1 + imagens.length) % imagens.length;
+      trocarImagem(indexAtual);
     }
+  });
 
-    function trocarImagem(novoIndex) {
-      indexAtual = novoIndex;
-      rgImg.src = imagens[indexAtual];
-      rotacaoAtual = 90;
-      aplicarRotacao();
-    }
-
-    rgImg.onload = aplicarRotacao;
-
-    let startX = 0;
-    rgArea.addEventListener('touchstart', e => {
-      startX = e.touches[0].clientX;
-    }, { passive: true });
-
-    rgArea.addEventListener('touchend', e => {
-      const endX = e.changedTouches[0].clientX;
-      const deltaX = endX - startX;
-
-      if (Math.abs(deltaX) > 50) {
-        if (deltaX < 0) indexAtual = (indexAtual + 1) % imagens.length;
-        else indexAtual = (indexAtual - 1 + imagens.length) % imagens.length;
-        trocarImagem(indexAtual);
-      }
-    }, { passive: true });
-
-    // 🧩 Debug: mostrar altura real no WebView
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        console.log("Altura rg-area:", rgArea.clientHeight + "px");
-      }, 800);
-    });
-
-      function atualizarDataHora() {
+  /* ——— Atualizar Data ——— */
+  function atualizarDataHora() {
     const agora = new Date();
-
     const dia = String(agora.getDate()).padStart(2, '0');
     const mes = String(agora.getMonth() + 1).padStart(2, '0');
     const ano = agora.getFullYear();
-
     const horas = String(agora.getHours()).padStart(2, '0');
     const minutos = String(agora.getMinutes()).padStart(2, '0');
 
-    const texto = `Atualizada em: ${dia}/${mes}/${ano} às ${horas}:${minutos}`;
-    document.getElementById('dataAtualizacao').textContent = texto;
+    document.getElementById('dataAtualizacao').textContent =
+      `Atualizado em ${dia}/${mes}/${ano} - ${horas}:${minutos}`;
   }
 
-  // Atualiza ao carregar
   window.addEventListener('load', atualizarDataHora);
 
-  let startY = 0;
-let isRefreshing = false;
+  /* ——— Botões ——— */
+  document.getElementById('btnRG1').onclick = () => trocarImagem(0);
+  document.getElementById('btnRG2').onclick = () => trocarImagem(1);
+  document.getElementById('btnRG3').onclick = () => trocarImagem(2);
+  document.getElementById('btnRG4').onclick = () => trocarImagem(3);
+</script>
 
-document.addEventListener('touchstart', e => {
-  if (window.scrollY === 0) {
-    startY = e.touches[0].clientY;
-  }
-}, { passive: true });
-
-document.addEventListener('touchend', e => {
-  const endY = e.changedTouches[0].clientY;
-  const deltaY = endY - startY;
-
-  if (deltaY > 80 && !isRefreshing && window.scrollY === 0) {
-    isRefreshing = true;
-    const loader = document.getElementById('loader');
-    loader.style.display = 'block';
-
-    setTimeout(() => {
-      location.reload(); // recarrega a página
-    }, 1000); // tempo de exibição do loader
-  }
-}, { passive: true });
-
-document.addEventListener('gesturestart', function (e) {
-  e.preventDefault();
-});
-document.getElementById('btnRG1').addEventListener('click', () => {
-  trocarImagem(0); // RG 1
-});
-
-document.getElementById('btnRG2').addEventListener('click', () => {
-  trocarImagem(1); // RG 2
-});
-
-document.getElementById('btnRG3').addEventListener('click', () => {
-  trocarImagem(2); // RG 3
-});
-document.getElementById('btnRG4').addEventListener('click', () => {
-  trocarImagem(3); // RG 3
-});
-
-  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
