@@ -13,6 +13,7 @@
       margin: 0;
       font-family: Arial, sans-serif;
       background: #f2f2f2;
+       touch-action: pan-x pan-y;
     }
     .topbar {
       width: 100%;
@@ -190,6 +191,51 @@
     </div>
 
   </div>
+
+
+
+<div id="refreshLoader" style="
+  display:none;
+  position:fixed;
+  top:10px;
+  left:50%;
+  transform:translateX(-50%);
+ 
+  color:#fff;
+  padding:8px 16px;
+  border-radius:20px;
+  font-size:14px;
+  z-index:999;
+">
+🔄 Atualizando...
+</div>
+
+  <script>
+let startY = 0;
+let isRefreshing = false;
+
+document.addEventListener('touchstart', e => {
+  if (window.scrollY === 0) {
+    startY = e.touches[0].clientY;
+  }
+}, { passive: true });
+
+document.addEventListener('touchend', e => {
+  const endY = e.changedTouches[0].clientY;
+  const deltaY = endY - startY;
+
+  if (deltaY > 80 && !isRefreshing && window.scrollY === 0) {
+    isRefreshing = true;
+    const loader = document.getElementById('refreshLoader');
+    loader.style.display = 'block';
+
+    // simula atualização
+    setTimeout(() => {
+      location.reload(); // recarrega a página
+    }, 1000);
+  }
+}, { passive: true });
+</script>
 
 </body>
 </html>
