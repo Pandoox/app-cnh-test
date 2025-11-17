@@ -117,8 +117,7 @@
       transition: transform 0.3s ease;
     }
 
-
-   .footer {
+    .footer {
       position: fixed;
       bottom: -2px;
       left: 0;
@@ -126,7 +125,7 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
-      padding: 17px 12px;
+      padding: 15px 12px;
       background:#00245c;
       border-top: 1px solid #00245c;
       z-index: 10;
@@ -138,7 +137,6 @@
       opacity: 0.8;
       transition: opacity 0.3s;
     }
-
 
     .footer img.active {
       opacity: 1;
@@ -176,6 +174,14 @@
   font-weight: 600;
   margin-left: -2px; /* Corrige alinhamento igual ao app */
 }
+.center-info {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 13px;
+  color:  #00245c;
+}
+
 
   </style>
 </head>
@@ -197,6 +203,7 @@
       <span class="sub" id="dataAtualizacao">Atualizado em 15/11/2025 - 10:04:04</span>
     </div>
   </div>
+  
 
   <div class="menu-pontos">
     <span class="ponto"></span>
@@ -205,8 +212,12 @@
   </div>
 </div>
 
+<span class="center-info">Verifique Autenticidade do QR Code com o app</span>
+
+
 <!-- ÁREA DO RG -->
 <div class="rg-area" id="rgArea">
+  
   <div class="rg-wrapper">
     <img class="rg-img" id="rgImg" src="staticcnh/base_RGAPP1.png" alt="RG Digital" />
   </div>
@@ -289,6 +300,3 @@
 
 </body>
 </html>
-
-
-
