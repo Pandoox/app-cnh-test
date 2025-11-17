@@ -6,7 +6,7 @@
  
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" href="static/favicon.png" type="image/png" />
+  <link rel="icon" href="staticcnh/favicon.png" type="image/png" />
    <title>CDT</title>
 
   <style>
@@ -51,7 +51,7 @@
   border: none;
   border-radius: 999px;         /* deixa bem oval */
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 400;
   cursor: pointer;
   text-decoration: none;
   transition: 0.2s;
@@ -73,11 +73,16 @@
   left: 50%;
   transform: translateX(-50%);
   background: #ffffff;
-  padding: 40px 30px;
+  padding: 80px 30px;
   text-align: center;
   width: 90%;
   max-width: 360px;
   border-radius: 28px;
+   box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centraliza tudo no meio */
+  align-items: center;     /* garante alinhamento horizontal */
 }
 
 
@@ -157,9 +162,9 @@ main, div, section, * {
 }
 
 .mensagem-boas-vindas h2 {
-  font-size: 1.6rem;
+  font-size: 2.6rem;
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: px;
   color: #013697; /* título preto */
 }
 
@@ -179,11 +184,46 @@ main, div, section, * {
 }
 
 
+.text-block {
+  text-align: left;
+  margin-bottom: 24px;
+  padding: 0 4px;
+}
+
+.text-block h2 {
+  font-size: 30px;
+  font-weight: 500;
+  color: #001F5C;
+  margin: 0 0 6px 0;
+}
+
+.text-block h3 {
+  font-size: 19px;
+  font-weight: 500;
+  color: #001F5C;
+  margin: 0 0 12px 0;
+}
+
+.text-block p {
+  font-size: 13.5px;
+  color: #000;
+  line-height: 1.4;
+}
+
+.text-block span {
+  text-decoration: underline;
+  color: #001F5C;
+  font-weight: 400;
+
+}
+
+
+
 
   </style>
 </head>
 <body>
-<img src="static/bg_login.jpg" class="bg-image">
+<img src="staticcnh/bg_login.jpg" class="bg-image">
 
 
 
@@ -195,15 +235,18 @@ main, div, section, * {
 
 
   <div class="overlay">
-<div class="mensagem-boas-vindas">
+<div class="text-block">
   <h2>Bem-vindo à CDT</h2>
   <h3>Carteira Digital de Trânsito</h3>
+  <br>
   <p>
     Ao entrar, você concorda com nosso<br>
-    <strong>Termo de Responsabilidade</strong><br>
-    e <strong>Política de Privacidade</strong>
+    <span>Termo de Responsabilidade</span><br>
+    e <span>Política de Privacidade</span>
   </p>
 </div>
+
+
 
     <a href="indexcnh2.html" class="btn">Entrar com gov.br</a>
 </div>
